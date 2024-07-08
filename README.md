@@ -89,4 +89,4 @@ This software is designed to extract information regarding potential Server Name
 - Users acknowledge that they use this tool at their own risk and agree to hold harmless the authors and maintainers of this software against any claims or damages arising from its use.
 
 > [!WARNING]
-> This tool is intentionally **NOT** published on pypi and so you shouldn't.
+> This tool is intentionally **NOT** published on pypi and **NO** one should.
