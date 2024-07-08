@@ -1,5 +1,5 @@
 <h1 align="center">
-<a href="https://kofnet.co.za/sni-bug-host-generator/">Kofnet</a
+<a href="https://kofnet.co.za/sni-bug-host-generator/">Kofnet</a>
 
 </h1>
 
