@@ -63,10 +63,6 @@ Commands:
 
 ---
 
-Certainly! Here's a sample disclaimer you might consider including in your GitHub project repository for extracting SNI (Server Name Indication) bug hosts from the website kofnet.co.za:
-
----
-
 <h2 align="center">Disclaimer</h2>
 
 This software is designed to extract information regarding potential Server Name Indication (SNI) bugs from the website kofnet.co.za. It is intended for use by security researchers, IT professionals, and individuals interested in improving web security.
