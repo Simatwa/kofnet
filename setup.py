@@ -6,7 +6,7 @@ from setuptools import find_packages
 
 
 INSTALL_REQUIRE = [
-    "requests==2.31.0",
+    "requests>=2.31.0",
 ]
 
 cli_reqs = ["click==8.1.3", "tabulate==0.9.0"]
@@ -56,7 +56,6 @@ setup(
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",
-        "Intended Audience :: Developers",
         "Natural Language :: English",
         "License :: Free For Home Use",
         "Intended Audience :: Customer Service",
@@ -64,8 +63,8 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: 3.10",
-        "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
     ],
 )
