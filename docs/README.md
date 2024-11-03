@@ -24,9 +24,9 @@ The bug hosts are extracted from https://kofnet.co.za/sni-bug-host-generator/
 
 ```python
 from kofnet import Hunter
-# Extract codes and their corresponding countries.
 hunter = Hunter()
 
+# Extract codes and their corresponding countries.
 hunter.get_countries_code_map()
 
 # Extract sni bug host mapped with their country codes.
