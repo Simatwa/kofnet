@@ -22,13 +22,15 @@ class Hunter:
 
     url = "https://kofnet.co.za/sni-bug-host-generator/"
 
-    def __init__(self, contents: str = None):
+    def __init__(self, contents: str = None, url: str = ""):
         """Constructor
 
         Args:
             contents (str, optional): Html Contents. Defaults to None.
+            url (str, optional): url to replace the generator link at the extracted SNIs. Defaults to "".
         """
         self.html_content = contents
+        self.url = url
         self.update_contents()
 
     def update_contents(self, ignore_check: bool = False) -> str:
@@ -73,15 +75,16 @@ class Hunter:
         Returns:
             dict[str, str]: {code : sni}
         """
-        code_sni_map = r"data\s=\s\{[^{}]*\}"
+        code_sni_map = r"data\s*=\s*\{[^{}]*\}"
         hunt = re.findall(code_sni_map, self.html_content)
         target: str = hunt[0]
 
         results = re.findall(r"\W*([A-Z]{2}):\W*`([\w\W][^`]*)\W*", target)
 
         cache = {}
-        for code, country in results:
-            cache[code] = country
+        for code, sni in results:
+            sanitized_sni = re.sub(r"</?a[^>]*>", self.url, sni)
+            cache[code] = sanitized_sni
 
         return cache
 
@@ -127,7 +130,7 @@ class Manipulator(Hunter):
 
 
 if __name__ == "__main__":
-    run = Manipulator(open("kofnet.html", "r").read())
+    run = Manipulator(open("assets/kofnet-cache1.html", "r").read())
     a = run.get_code_sni_map()
     while True:
         try:
