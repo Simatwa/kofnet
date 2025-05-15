@@ -22,15 +22,15 @@ class Hunter:
 
     url = "https://kofnet.co.za/sni-bug-host-generator/"
 
-    def __init__(self, contents: str = None, url: str = ""):
+    def __init__(self, contents: str = None, filler_url: str = ""):
         """Constructor
 
         Args:
             contents (str, optional): Html Contents. Defaults to None.
-            url (str, optional): url to replace the generator link at the extracted SNIs. Defaults to "".
+            filler_url (str, optional): url to replace the generator link at the extracted SNIs. Defaults to "".
         """
         self.html_content = contents
-        self.url = url
+        self.filler_url = filler_url
         self.update_contents()
 
     def update_contents(self, ignore_check: bool = False) -> str:
@@ -83,7 +83,7 @@ class Hunter:
 
         cache = {}
         for code, sni in results:
-            sanitized_sni = re.sub(r"</?a[^>]*>", self.url, sni)
+            sanitized_sni = re.sub(r"</?a[^>]*>", self.filler_url, sni)
             cache[code] = sanitized_sni
 
         return cache
